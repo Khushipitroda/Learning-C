@@ -1,0 +1,4 @@
+wifi:
+home-1db3
+passord:
+33DDEF01ADE4E5A9
