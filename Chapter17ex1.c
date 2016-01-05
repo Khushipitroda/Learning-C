@@ -1,239 +1,47 @@
-//Example program #2 Chapter 17 from beginner's guide to c
-//file Chapter17ex2.c
+//example program #1 from beginner's guide to c
+//file chapter17ex1.c
 
-/*	This program presents a menu of choices (Three different decades),
-	gets teh user's choice, and then presents a secondary menu
-	(sports, entertainment, and politics).
-	When the user makes her second choice, it prints a list of key information
-	from that specific decade in that specific category.	*/
+/*	This program presents a menu of choices, gets the user's choice,
+	and then uses the switch statement to execute a line or two of code
+	based on that choice. (What the user wants to do is not truly impemented,
+	it is just a series of stubs to each the value of the switch statement)	*/
 
 #include <stdio.h>
-#include <stdlib.h>	// Remember if you plan to use exit(), you need this header file..
+#include <stdlib.h>
 
 int main()
 {
-	// Despite being a long program, you only need two variables:
-	// one for the first menu and one for the second
+	int choice;
 
-	int choice1;
-	int choice2;
-
-
-
-	// The potential decade choices
-
-	printf("What do you want to see?\n");
-	printf("1. The 1980's\n");
-	printf("2. The 1990's\n");
-	printf("3. The 2000's\n");
-	printf("4. Quit\n");
-
-	// The top-menu choices and the switch statement that makes teh resulting information
-	// appear are encased in a do-while loop that ensures one of the 4 menu choices are made.
+	printf("What do you want to do?\n");
+	printf("1. Add New Contact\n");
+	printf("2. Edit Existing Contact\n");
+	printf("3. Call Contact\n");
+	printf("4. Text Contact\n");
+	printf("5. Exit\n")
 	do
 	{
-		printf("Enter your choice: ");
-		scanf(" %d", &choice1);
-		switch (choice1)
+		printf("\n\nEnter your choice: ");
+		scanf(" %d", &choice);
+		switch (choice)
 		{
-
-			// In the first case, the user picked the 1980s. Now it's time to see what
-			// specific info they need.
-
-			case (1):
-			{
-				printf("\n\nWhat would you like to see?\n");
-				printf("1. Baseball\n");
-				printf("2. The Movies\n");
-				printf("3. The US Presidents\n");
-				printf("4. Quit\n");
-
-				printf("Enter your choice: ");
-				scanf(" %d", &choice2);
-
-				if (choice2 == 1)
-					{
-					printf("\n\nWorld Series Champions of the 1980s:\n");
-					printf("1980: Philadelphia Phillies\n");
-					printf("1981: Los Angeles Dodgers\n");
-					printf("1982: St. Louis Cardinals\n");
-					printf("1983: Baltimore Orioles\n");
-					printf("1984: Detroit Tigers\n");
-					printf("1985: Kansas City Royals\n");
-					printf("1986: New York Mets\n");
-					printf("1987: Minnesota Twins");
-					printf("1988: Los Angeles Dodgers\n");
-					printf("1989: Oakland A's\n");
-					printf("\n\n\n");
-					break;
-
-				} else if (choice2 == 2)
-				{
-					printf("\n\nOscar-Winning Movies in the 1980s:\n");
-					printf("1980: Ordinary People\n");
-					printf("1981: Chariots of Fire\n");
-					printf("1982: Ganghi\n");
-					printf("1983: Terms of Endearment\n");
-					printf("1984: Amadeus\n");
-					printf("1985: Platoon\n");
-					printf("1986: The Last Emperor\n");
-					printf("1988: Rain Man\n");
-					printf("1988: Driving Miss Daisy\n");
-					printf("\n\n\n");
-					break;
-				} else if (choice2 == 3)
-				{
-					printf("\n\nUS Presidents in thej 1980s: \n");
-					printf("1980: Jimmy Carter\n");
-					printf("1981-88: Ronald Reagan\n");
-					printf("1989: George Bush\n");
-					printf("\n\n\n");
-					break;
-
-				} else if (choice2 == 4)
-				{
-					exit(1);
-				} else
-				{
-					printf("Sorry, that is not a valid choice!\n");
-					break;
-				}
-
-			} //end case1
-
-
-			//This case is for the 1990s.
-			//Unlike the top menu, there isn't a data-validation do-while loop.
-
-			case (2):
-			{
-				printf("What would you like to see?\n");
-				printf("1. Baseball\n");
-				printf("2. The Movies\n");
-				printf("3. US Presidents\n");
-				printf("4. Quit\n");
-
-				printf("Enter your choice: ");
-				scanf(" %d", &choice2);
-
-				if (choice2 == 1)
-				{
-					printf("\n\nWorld Series Campions of the 1990s:\n");
-					printf("1990: Cincinnati Reds\n");
-					printf("1991: Minnesota Twins\n");
-					printf("1992: Toronto Blue Jays\n");
-					printf("1993: Toronto Blue Jays\n");
-					printf("1994: No World Series\n");
-					printf("1995: Atlanta Braves\n");
-					printf("1996: New York Yankees\n");
-					printf("1997: Florida Marlins\n");
-					printf("1998: New York Yankees\n");
-					printf("1999: New York Yankees\n");
-					printf("\n\n\n");
-					break;
-				} else if (choice2 == 2)
-				{
-					printf("\n\nOscar-Winning Movies in the 1990s\n");
-					printf("1990: Dances with wolves\n");
-					printf("1991: The Silence of the Lambs\n");
-					printf("1992: Unforgiven\n");
-					printf("1993: Schindler's List\n");
-					printf("1994: The English Patient\n");
-					printf("1995: Titanic\n");
-					printf("1996: Shakespeare in Love\n");
-					printf("1997: American Beauty\n");
-					printf("\n\n\n");
-					break;
-				} else if (choice2 == 3)
-				{
-					printf("\n\nUS Presidents in the 1990s:\n");
-					printf("1990-1992: George Bush\n");
-					printf("1993-1999: Bill Clinton\n");
-					printf("\n\n\n");
-					break;
-				} else if (choice2 == 4)
-				{
-					exit(1);
-				} else
-				{
-					printf("Sorry, thay is not a valid choice!\n");
-					break;
-				}
-
-			} //end case2
-
-			//The section for when the user selects the 2000s
-			case (3):
-			{
-				printf("What would you like to see?\n");
-				printf("1. Baseball\n");
-				printf("2. The Movies\n");
-				printf("3. US Presidents\n");
-				printf("4. Quit\n");
-
-				printf("Enter your choice: ");
-				scanf(" %d", &choice2);
-
-				if (choice2 == 1)
-				{
-					printf("\n\nWorld Series Champions of the 2000s:\n");
-					printf("2000: New York Yankees\n");
-					printf("2001: Arizona Diamondbacks\n");
-					printf("2002: Anaheim Angels\n");
-					printf("2003: Florida Marlins\n");
-					printf("2004: Florida Marlins\n");
-					printf("2005: Florida Marlins\n");
-					printf("2006: Florida Marlins\n");
-					printf("2007: Florida Marlins\n");
-					printf("2008: Florida Marlins\n");
-					printf("2009: New York Yankees\n");
-					printf("\n\n\n");
-					break;
-				} else if (choice2 == 2)
-				{
-					printf("\n\n\nOscar-Winning Movies in the 2000s:\n");
-					printf("2000: Gladiator\n");
-					printf("2001: A Beautiful Mind\n");
-					printf("2002: Chicago\n");
-					printf("2003: The Lord of the Rings\n");
-					printf("2004: Million Dollar Baby\n");
-					printf("2005: Crash\n");
-					printf("2006: The Departed\n");
-					printf("2007: No Country for Old Men\n");
-					printf("2008: Slumdog Millionaire\n");
-					printf("2009: The Hurt Locker\n");
-					printf("\n\n\n");
-					break;
-				} else if (choice2 == 3)
-				{
-					printf("\n\nUS Presidents in the 2000s\n");
-					printf("2000: Bill Clinton\n");
-					printf("2001-2008: George Bush\n");
-					printf("2009: Barrack Obama\n");
-					printf("\n\n\n");
-					break;
-				} else if (choice2 == 4)
-				{
-					exit(1);
-				} else
-				{
-					printf("Sorry, that is not a valid choice!\n");
-					break;
-				}
-			} //case 3 end
-			case (4):
-			{
-				exit(1);
-			}
-			default: printf("\n%d is not a valid choice.\n", choice1);
-					 printf("Please Try Again.\n\n");
-					 break;
-
+			case (1): 	printf("\nTo add you will need the contact's\n");
+						printf("First name, last name, and number.\n");
+						break;
+			case (2): 	printf("\nGet ready to enter the name of the\n");
+						printf("contact you wish to change.\n");
+						break;
+			case (3): 	printf("\nWhich contact do you wish to call?\n");
+\						break;
+			case (4): 	printf("\nWhich contact do you wish to text?\n");
+						break;		
+			case (5): 	exit(1); //Exits the program early
+			default:	printf("\n%d is not a valid choice.\n", choice);	
+						printf("Try again.\n");
+						break;														
 		}
 
-	} while ((choice1 < 1) || (choice1 > 4));
-
+	} while ((choice < 1) || (choice > 5));		//end do
 	return 0;
 
-
-} //end main
+}												// end main		
