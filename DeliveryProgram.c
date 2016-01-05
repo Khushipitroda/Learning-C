@@ -6,9 +6,6 @@
 //5) program will then add all of these values into a total.
 //6) program will subtract total from the amount owed....
 //7) program will eventualy be able to list all data entered back to the driver, so they can easily double, and triple check everything...
-
-
-
 #include <stdio.h>
 #include <string.h>
 
@@ -20,13 +17,7 @@ int main()
 	float owed = 0.00, total = 0.00, finalTotal, deliveries, credit, prepaid, other;
 	int numPrepaid, numCredit, numOther;
 	char driver[20];
-
-
-
-
-
 	// All variables will be declared here!!!! =================================================
-
 
 
 
@@ -35,21 +26,13 @@ int main()
 	printf("Welcome! please type in your first name!\n");
 	scanf(" %s", driver);
 
-
-
 	//How much driver owes pizzeria
 	printf("Hi, %s! Please enter the total amount you owe the pizzeria!\n", driver);
 	scanf(" %f", &owed);
 
-
-
-
 	//Used for calculating amnt pizzeria needs to pay for gas..
 	printf("Now, please enter the amount of deliveries you took today!\n");
 	scanf(" %f", &deliveries);
-
-
-
 
 	//Now we add all the prepaids the drive took to the total sum
 	printf("Now please enter the totals for all of your prepaid tickets!\n(NOT THE TOTAL ON THE TICKET, THE TOTAL ON THE FAX RECEIPT.)\n");
@@ -104,7 +87,6 @@ int main()
 			scanf(" %f", &credit);
 		}
 
-
 		if (credit < 0.00)
 		{
 			break;
@@ -120,9 +102,7 @@ int main()
 
 
 
-
-
-	//Just incase driver hass poker chips, or someone else assigned a delivery to the wrong driver..
+	//Just incase driver has poker chips, or someone else assigned a delivery to the wrong driver..
 	printf("If there are any other items you paid for today, please enter them now!\n");
 	for (numOther = 0; numOther < 30; numOther++)
 	{
@@ -156,7 +136,6 @@ int main()
 	printf("That includes your prepaids, your credits, your gas, and any other deductions..\n");
 	printf("You owed the pizzeria $%.2f, so we will subtract your $%.2f from the total amount owed.\n", owed, total);
 
-
 	//This is how much the driver needs to put in or take out of the till at the end of the day...
 	finalTotal = owed - total;
 
@@ -164,5 +143,4 @@ int main()
 	printf("Put $%.2f in the till, and finalize all your credits! :), good night!\n", finalTotal);
 
 	return 0;
-
 }
