@@ -34,8 +34,7 @@ int main()
 	}
 
 	// Use a floating point variable to calculate average as it is likely to have a decimal
-
-	avg = ((float)totalPoints / 10);
+	avg = ((float)totalPoints\10);
 
 	printf("\n\nThe Player's scoring average is %.1f.\n", avg);
 

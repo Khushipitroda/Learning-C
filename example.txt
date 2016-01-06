@@ -1,0 +1,2 @@
+C is a super awesome language! Except it really sucks at reading files!
+YAY!!
