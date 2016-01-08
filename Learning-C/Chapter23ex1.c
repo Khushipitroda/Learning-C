@@ -24,17 +24,17 @@ int main()
 	{
 		nums[ctr] = (rand() % 99) + 1;
 
-	} 
+	}
 
-	// Now list the array as it currenty is before sorting 
+	// Now list the array as it currenty is before sorting
 	puts("\n Here is the list before sort: \n");
 
 	for (ctr = 0; ctr < 10; ctr++)
 	{
-		printf("%d\n", num[ctr]);
+		printf("%d\n", nums[ctr]);
 	}
 
-	// Sort the array 
+	// Sort the array
 
 	for (outer = 0; outer < 9; outer++)
 	{
@@ -44,22 +44,22 @@ int main()
 			if (nums[inner] < nums[outer])
 			{
 				temp = nums[inner];
-				nums[inner] = nums[outer]; 
+				nums[inner] = nums[outer];
 				nums[outer] = temp;
 				didSwap = 1;
 			} //end if
 
 		} //end of inner
-		if (didSwap = 0)
+		if (didSwap == 0)
 		{
 			break;
 		}	// end of if break
 
 	}	//end of outer
 
-	// Now list the array as it currently is after sorting 
+	// Now list the array as it currently is after sorting
 	puts("\nList after sort: \n");
-	for (ctr = 0; cr < 10; ctr++)
+	for (ctr = 0; ctr < 10; ctr++)
 	{
 		printf("%d\n", nums[ctr]);
 
