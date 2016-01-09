@@ -89,16 +89,16 @@ int main()
 	} //end if
 
 
-	if( fgets (str5, 200, fp)!=NULL ) {
+	if( fgets (str, 200, fp)!=NULL ) {
 
-	  //puts(str5);
+	  //puts(str);
 
 
 	} //end if
 
 
-	if( fgets (str, 200, fp)!=NULL ) {
-        puts(str);
+	if( fgets (str5, 200, fp)!=NULL ) {
+        puts(str5);
 	} //end if
 
 
@@ -170,7 +170,7 @@ int main()
     printf("\n\n\nstr2: %c%c%c%c", str2[17], str2[18], str2[20], str2[21]);
     printf("\n\n\ncash: %c%c%c%c", cashAmnt[0], cashAmnt[1], cashAmnt[2], cashAmnt[3]);
     printf("\n\ndue: %c%c%c%c", dueAmnt[0], dueAmnt[1], dueAmnt[2], dueAmnt[3]);
-    printf("\n\nDeliv#: %c%c", deliveryAmnt[0], deliveryAmnt[1]);
+    printf("\n\nDeliv#: %c%c\n", deliveryAmnt[0], deliveryAmnt[1]);
 	return(0);
 	}
 

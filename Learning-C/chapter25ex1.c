@@ -19,10 +19,10 @@ int main()
 	char * movies[9] = {"Amour", "Argo",
 								"Beasts of the Southern Wild",
 								"Django Unchained",
-								"Les Miserables",
-								"Life of Pi",
-								"Lincoln",
-								"Silver Linnings Playbook",
+								"Les Miserables",                                           /*	This array doesn't contiain strings of movies..	*/
+								"Life of Pi",												/*	It only contains addresses for strings that have names	*/
+								"Lincoln",													/*	It actually looks like movies[9] = "9934", "4325", "5678"	*/
+								"Silver Linnings Playbook",									/*	where 9934 is defined as "Argo", and 4325 is Beast of Southrn */
 								"Zero Dark Thirty"};
 
 	int movieratings[9]; 	// A corresponding array of 9 integers for movie ratings
