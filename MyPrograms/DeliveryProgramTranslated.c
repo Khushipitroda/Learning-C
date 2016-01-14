@@ -1,21 +1,3 @@
-//This program will be used to calculate how much driver's owe at the end of a shift...
-//Will ask for total amount owed... then will ask how many deliveries the driver took.
-//2) then will ask user to input all prepaids
-//3) then will ask user to input all credits
-//4) then will ask user for any other payments made... (poker chips, grocery store runs, etc..)
-//5) program will then add all of these values into a total.
-//6) program will subtract total from the amount owed....
-//7) program will eventualy be able to list all data entered back to the driver, so they can easily double, and triple check everything...	NOT DONE
-//8) program should be able to list the amount of credit, prepaids, and others back to driver at end.		NOT DONE
-//9) if a driver puts in a wrong digit, they should be able to go back and fix it. (this might be hard)		NOT DONE
-//10) This is a long-shot. But maybe pull data for POS. That would be sweet.								NOT DONE
-//11) Need's GUI																							NOT DONE
-//12) Driver's shoudld be able to write a comment for the manager, if anything wierd happens				DONE (will need to change eventually)
-//13) if driver is owed money, execute a seperate line of code ex:"Take 20.00 out of till"					NOT DONE
-
-
-
-#include <string.h>
 #include <stdio.h>
 int main()
 {
