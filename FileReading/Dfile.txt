@@ -16,13 +16,13 @@ _________________________
  Due From Driver:29.42
   _________________________
    Total Payments by Type  _________________________
-                 : 29.42
-             Cash:  1.00
+                 : 539.42
+             Cash:  19.20
 
 
  _________________________
     Driver Pay Summary__________________________
- Delivery Orders:    3
+ Delivery Orders:    13
 ivery Pay Amount:
 al Due To Driver: 0.00
  _________________________
