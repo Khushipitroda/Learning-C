@@ -1,0 +1,19 @@
+Hello, World!
+
+I will try to start the loop now…
+_________________________
+11:08a Open -Cas  0.00
+2:36p #307868-44 20.93
+2:36p #307872-72  8.49
+2:36p #307872-72  8.49
+2:36p #307868-44 20.93
+
+               ________
+ Due From Driver:29.42
+  _________________________
+   Total Payments by Type  _________________________
+                 : 29.42
+             Cash:  0.00
+random in
+random input
+random input

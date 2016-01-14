@@ -4,19 +4,20 @@ int main()
 
 	FILE *fp;
 	char str[200];
-    char str2[200];
-    char str3[200];
-    char str4[200];
-    char str5[200];
+    char str2[200];	// Cash Amount
+    char str3[200];	// Due Amount
+    char str4[200];	// Driver's Name
+    char str5[200];	// Delivery Amount
     char str6[200];
     char cashAmnt[5];
     char dueAmnt[5];
     char deliveryAmnt[5];
+    char driverName[20];
+    int check;
     int x = 0;
 	/* opening file for reading */
 	fp = fopen("/Users/MaxM/Desktop/C_programs/FileReading/dFile.txt" , "r");
 	if( fgets (str, 200, fp)!=NULL ) {
-
 	} //end if
 	if( fgets (str, 200, fp)!=NULL ) {
 
@@ -28,58 +29,81 @@ int main()
     if( fgets (str, 200, fp)!=NULL ) {
         //puts(str);    This Line should Have Bank: # for driver
 	} //end if
-	if( fgets (str, 200, fp)!=NULL ) {
-	    puts(str);     //DRIVE NAME
+	if( fgets (str4, 200, fp)!=NULL ) {
+	    puts(str4);     //DRIVER NAME
 	} //end if
 	if( fgets (str, 200, fp)!=NULL ) {
 	} //end if
 	if( fgets (str, 200, fp)!=NULL ) {
-	    //puts(str); This line shouws a dash...
+	    puts(str); //This line shouws a dash... could start loop here..
+
 	} //end if
-	if( fgets (str2, 200, fp)!=NULL ) {
-	    puts(str2);
-	} //end if
+	check = 0;
+	do {
+
+      	fgets (str, 100, fp);
+      		for (int i = 0; i < 100; i++)
+      		{
+      			if (str[i] == '_')
+      			{
+      				check = 1;	// So we know we are done with loop.
+      				break; // Shoud break out of iteration..
+      			}
+      			else
+      			{
+      				puts(str);
+			      	fgets (str, 100, fp);
+
+
+      			}	// End of nested if/else
+      		} // end of for loop
+	} while (check != 1);	// Check will be 1 when we reach the end of our loop. so we will stop loop then.
 
 
 	if( fgets (str, 200, fp)!=NULL ) {
-
-
-	  puts(str);
-
-	} //end if
-
-
-	if( fgets (str, 200, fp)!=NULL ) {
-        puts(str);
-	} //end if
-
-
-	if( fgets (str, 200, fp)!=NULL ) {
-
-	  /* writing content to stdout */
-	  //puts(str);
-
-	} //end if
-
-
-	if( fgets (str, 200, fp)!=NULL ) {
-	} //end if
-	if( fgets (str, 200, fp)!=NULL ) {
-	} //end if
-	if( fgets (str, 200, fp)!=NULL ) {
+	    //puts(str);
 	} //end if
 
 
 	if( fgets (str3, 200, fp)!=NULL ) {
 
-	  /* writing content to stdout */
 	  puts(str3);
 
 	} //end if
 
 
+	if( fgets (str2, 200, fp)!=NULL ) {
+        puts(str2);
+	} //end if
+
+
+	if( fgets (str, 200, fp)!=NULL ) {
+	  //puts(str);
+	} //end if
+
+
+	if( fgets (str, 200, fp)!=NULL ) {
+	  //puts(str);
+	} //end if
+	if( fgets (str, 200, fp)!=NULL ) {
+	  //puts(str);
+
+	} //end if
+	if( fgets (str, 200, fp)!=NULL ) {
+	  //puts(str);
+
+	} //end if
+
+
 	if( fgets (str5, 200, fp)!=NULL ) {
-        puts(str5);
+
+	  puts(str5);
+
+	} //end if
+
+
+	if( fgets (str, 200, fp)!=NULL ) {
+        //puts(str);
 	} //end if
 	if( fgets (str, 200, fp)!=NULL ) {
 	} //end if
@@ -97,17 +121,13 @@ int main()
 	} //end if
 
 
-	if( fgets (str5, 200, fp)!=NULL ) {
-        puts(str5);
+	if( fgets (str, 200, fp)!=NULL ) {
+        //puts(str);
 	} //end if
 
 
-	if( fgets (str6, 200, fp)!=NULL ) {
-	  /* writing content to stdout */
-
-
+	if( fgets (str, 200, fp)!=NULL ) {
 	} //end if
-
 
 	fclose(fp);
 
@@ -148,6 +168,19 @@ int main()
 
 
 
+    x = 0;
+    for (int i=0; i < strlen(str4); i++)		// For array with driver's name...
+    {
+        if (isalpha(str4[i]))
+    	{
+    		driverName[x] = str4[i];
+    		x++;
+    	} else
+    	{
+    		continue;
+    	}
+    }
+
 
 
 
@@ -166,11 +199,14 @@ int main()
     }
 
 
-
-    printf("\n\n\nstr2: %c%c%c%c", str2[17], str2[18], str2[20], str2[21]);
-    printf("\n\n\ncash: %c%c%c%c", cashAmnt[0], cashAmnt[1], cashAmnt[2], cashAmnt[3]);
-    printf("\n\ndue: %c%c%c%c", dueAmnt[0], dueAmnt[1], dueAmnt[2], dueAmnt[3]);
-    printf("\n\nDeliv#: %c%c\n", deliveryAmnt[0], deliveryAmnt[1]);
+    printf("\n\n\nname: %c%c%c%c%c%c%c%c", driverName[0], driverName[1], driverName[2], driverName[3], driverName[4], driverName[5], driverName[6], driverName[7]);
+    printf("\ncash: %c%c%c%c", cashAmnt[0], cashAmnt[1], cashAmnt[2], cashAmnt[3]);
+    printf("\ndue: %c%c%c%c", dueAmnt[0], dueAmnt[1], dueAmnt[2], dueAmnt[3]);
+    printf("\nDeliv#: %c%c\n", deliveryAmnt[0], deliveryAmnt[1]);
+    
+    
+    
+    
 	return(0);
 	}
 
