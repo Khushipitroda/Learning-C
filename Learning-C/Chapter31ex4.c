@@ -28,7 +28,7 @@ int main()
 
 	// Now we call the change some function, passing the value of i and the adress of x (hence, the &)
 
-	changeSome(i, &x, iAry);
+	changeSome(&i, &x, iAry);
 
 	puts("Here are main()'s variables before the function: ");
 	printf("\ni is %d\n", i);
@@ -43,7 +43,7 @@ int main()
 
 /****************************************************************************************************************************************/
 
-changeSome(int i, float *newX, int iAry[5])
+changeSome(int *i, float *newX, int iAry[5])
 {
 
 	// All variables are changes, but only the float and the array remain changed when the program returns to main()
