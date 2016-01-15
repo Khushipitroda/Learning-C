@@ -44,8 +44,11 @@ int main()
 	{
 		letter = fgetc(fptr);
 		printf("The next letter is %c. -- (%d)\n", letter, (i+1);
-
-
 	}
+
+
+	fclose(fptr);
+	return 0;
+
 
 }

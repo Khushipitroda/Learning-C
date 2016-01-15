@@ -1,3 +1,30 @@
+//This program will be used to calculate how much driver's owe at the end of a shift...
+//Will ask for total amount owed... then will ask how many deliveries the driver took.
+//2) then will ask user to input all prepaids
+//3) then will ask user to input all credits
+//4) then will ask user for any other payments made... (poker chips, grocery store runs, etc..)
+//5) program will then add all of these values into a total.
+//6) program will subtract total from the amount owed....
+//7) program will eventualy be able to list all data entered back to the driver, so they can easily double, and triple check everything...	NOT DONE
+//8) program should be able to list the amount of credit, prepaids, and others back to driver at end.		DONE
+//9) if a driver puts in a wrong digit, they should be able to go back and fix it. (this might be hard)		NOT DONE
+//10) This is a long-shot. But maybe pull data for POS. That would be sweet.								DONE
+//11) Need's GUI																							NOT DONE
+//12) Driver's shoudld be able to write a comment for the manager, if anything wierd happens				DONE (will need to change eventually)
+//13) if driver is owed money, execute a seperate line of code ex:"Take 20.00 out of till"					NOT DONE
+//14) Program needs to be way more modular... holy fuck...													NOT DONE
+//15) Program works on the work PCs																			NOT DONE
+//16) Program can calculate the amnt of expected credits, based on credits in POS							NOT DONE
+//17) Program reads back driver's name based on POS															NOT DONE
+//18) Another long shot, but program handles finalized credit's (maybe not)									NOT DONE
+//19) Program can calculate how much the driver made, if the driver wants to know 							NOT DONE
+//20) Program writes to DATABASE!(or spreadsheet)															NOT DONE
+//21) Program doesn't need user to enter -1...																NOT DONE
+
+
+
+
+#include <string.h>
 #include <stdio.h>
 int main()
 {
@@ -396,7 +423,7 @@ int main()
 	printf("You Said: \n \t %s", msg); //only accepts one word... fuck
 
 	//We need to calculate the gas the driver is owed... so we will add the amnt of deliveries to the total here...
-	total += float(n);
+	total += (float)n;	// Typecasts n to a float for calculation...
 	printf("\n\nYou took %d deliveries. The pizzeria pays out $1.00 for every delivery you take to account for gas.\n", n);
 	printf("So we will add $%d to the total...\n\n", n);
 	printf("------------------------------------------------------------------------------------------------------------\n");
@@ -416,7 +443,7 @@ int main()
 
 	finalTotal = d - total;
 
-	
+
 
 	printf("\n\nFinal: %.2f - %.2f = %.2f\n", d, total, finalTotal);
 	printf("Put $%.2f in the till, and finalize all your credits! :), good night!\n\n", finalTotal);
