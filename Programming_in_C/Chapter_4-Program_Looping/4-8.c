@@ -18,6 +18,6 @@ int main(void)
 
 	}
 
-	printf("\n"); 							// \n on here so above loop writes to one line.. then we break
+	printf("\n") 							// \n on here so above loop writes to one line.. then we break 
 
 }
