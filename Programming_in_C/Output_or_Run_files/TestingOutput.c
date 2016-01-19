@@ -1,23 +1,26 @@
-// Program to reverse the digits of a number
+// Prorgram should take an input from the user, and calculate the sum of all those integers added up!
 
 #include <stdio.h>
 
-int main(void)
+int main (void)
 {
 
-	int number, right_digit;
+	int ans, right_num, sum = 0;
 
-	printf("Enter your number.\n");
-	scanf("%i", &number);
+	printf("Please enter a positive integer! :  ");
+	scanf(" %i", &ans);
 
-	while (number != 0)
+	while (ans != 0)
 	{
-		right_digit = number % 10;			// Gives remainder of the last number... 1234 % 10 = 4 because 1234/10 = 123.4
-		printf("%i", right_digit);
-		number = number / 10;				// 1234 / 10 in integers is 123... this effectively moves to the next number...
 
+		right_num = ans % 10;	// Takes the right-most number from the input..
+
+		sum += right_num;
+
+		ans = ans / 10;				// Then once we are done with that number, we get rid of it... with /10..
 	}
 
-	printf("\n"); 							// \n on here so above loop writes to one line.. then we break
+	printf("%i", sum);
+    printf("\n");
 
 }
