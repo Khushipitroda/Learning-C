@@ -1,3 +1,5 @@
+//Program 4-9 updated to handle negative inputs.. will still reverse number, and will place the negative at the beginnning of output.
+
 // Revised program to reverse th e digits of a number
 
 
@@ -13,13 +15,20 @@ int main(void)
 {
 
 	int number, right_digit;
-
+	int flagN = 0;
 
 	printf("Enter your number.\n");
 	scanf(" %i", &number);
 
-	do 
+	do
 	{
+		if (number < 0)
+		{
+			number = -number; 	// Sets number to positive value.
+			printf("-");
+		}
+
+
 		right_digit = number % 10;
 		printf("%i", right_digit);
 		number = number / 10;

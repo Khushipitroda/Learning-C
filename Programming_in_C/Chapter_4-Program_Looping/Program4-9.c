@@ -13,17 +13,24 @@ int main(void)
 {
 
 	int number, right_digit;
-
+	int flagN = 0;
 
 	printf("Enter your number.\n");
 	scanf(" %i", &number);
 
-	do 
+	do
 	{
+		if (number < 0)
+		{
+			printf("Number is negative.");
+			number = 0;
+		}
+		else
+		{
 		right_digit = number % 10;
 		printf("%i", right_digit);
 		number = number / 10;
-
+		}
 	} while (number !=0 );
 
 	printf("\n");

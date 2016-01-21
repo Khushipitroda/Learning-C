@@ -8,7 +8,7 @@ int main (void)
 	int p, d;
 	_Bool isPrime;
 
-	for ( p = 2; p <= 50; p++ )
+	for ( p = 2; p <= 50; p += 2 )
 	{
 		isPrime = 1;
 
