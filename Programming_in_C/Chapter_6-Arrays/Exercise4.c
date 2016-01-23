@@ -1,0 +1,3 @@
+// Program should calc the avg, of an array of 10 floating-point numbers...
+
+#include <stdio.h>
