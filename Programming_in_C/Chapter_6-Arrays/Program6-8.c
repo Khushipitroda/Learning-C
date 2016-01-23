@@ -18,7 +18,7 @@ int main (void)
 		return 1;
 	}
 
-	unsigned long long int Fibonnaci[numFibs];                      // We declare variable by using another variable. So we can change array size.
+	unsigned long long int Fibonnaci[numFibs];
 
 	Fibonnaci[0] = 0;		// By definition
 	Fibonnaci[1] = 1;		// same
@@ -30,7 +30,7 @@ int main (void)
 
 	for (i = 0; i < numFibs; ++i)
 	{
-		printf("%llu,    ", Fibonnaci[i]);
+		printf("%llu, ", Fibonnaci[i]);
 	}
 
 
