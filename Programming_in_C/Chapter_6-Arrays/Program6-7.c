@@ -64,7 +64,7 @@ int main (void)
 	for (--index; index >= 0; --index)		// The first --index only happens once, as it is initializer. then after loop runs index is only decremented by 1.
 	{
 		nextDigit = convertedNumber[index];	
-		printf("%c", baseDigits[nextDigit]);
+		printf("%c", baseDigits[nextDigit]);	// This part applies the a-f in base digits if necessary. since nextdigit is set to n[index].
 
 	}
 

@@ -1,0 +1,1 @@
+// Program demonstrates printing with a function (void).

@@ -18,7 +18,7 @@ int main (void)
 		return 1;
 	}
 
-	unsigned long long int Fibonnaci[numFibs];
+	unsigned long long int Fibonnaci[numFibs];                      // We declare variable by using another variable. So we can change array size.
 
 	Fibonnaci[0] = 0;		// By definition
 	Fibonnaci[1] = 1;		// same
