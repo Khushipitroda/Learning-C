@@ -6,7 +6,7 @@
 int gcd(int u, int v)		// Function expects u and v to be passed at calling...
 {
 
-	int temp; // Local to gcd
+	int temp; // Local to gcd 
 
 	while (v != 0)
 	{
