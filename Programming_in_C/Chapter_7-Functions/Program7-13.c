@@ -1,7 +1,10 @@
 // This program shows how much typing and repeating can be saved by using functions...
 // Instead of typing out code to loop through and display the matrix every single time we want to
 // We can just put the piece of code into a function that expects an array.
+		
 
+		/*	Book specified scalarMuliply as function name, however that caused the linker to fail, bc Multiply is likely 
+			Defined somewhere in doumentation. Changed to scalarArray.	*/
 
 #include <stdio.h>
 
