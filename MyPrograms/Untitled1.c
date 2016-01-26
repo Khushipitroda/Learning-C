@@ -1,9 +1,5 @@
 // Program should simply use a function to mulitply the values of a floating-point array by 2
 
-
-/*	THIS PROGRAM DOESNT FUCKING COMPILE FOR LITERALLY NO FUCKING REASON... FUCK YOU CODE :: BLOCKS	*/
-
-
 #include <stdio.h>
 
 
