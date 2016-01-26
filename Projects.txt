@@ -1,0 +1,53 @@
+
+Ideas for full programs...
+
+
+1). Delivery Driver till calculator.			(in progress)
+	-- Needs to pull from database
+	-- Needs GUI
+
+2). Pizzeria inventory checker, or scheduler	(not done)
+	-- Lists all products avail, in store
+	-- Lists quantity.
+	-- Has pricing options available
+
+3). Point of sale ordering system				(not done)
+	-- Write's to a file, with order info
+	-- Can pull from a file, by entering phone number
+	-- Needs GUI
+	-- Program alert's when food should be ready/deliverd
+
+4). Tic-Tac-Toe game							(not done)
+	-- Needs GUI
+	-- Has AI difficulty setting
+	-- Counts win/loss/draws. Keeps playing till win
+	-- Three player mode??
+
+
+5). weather application							(not done)
+	-- Pulls weather data from an API
+	-- Displays in my own GUI
+
+6). Pacman										(not done)
+7). Pacman with AI that always beats game.		(not done)
+8). Web-Browser									(not done)
+9). Actual Pizzeria Website						(not done)
+10). Chess game with AI 						(not done)
+11). Search Engine. 							(not done)
+	-- Super modular, can be used for many Apps
+	-- Searches for files on disk
+	-- Searches inside files for key words.
+	-- Advanced search options
+
+12). Mobile Delivery helper app
+	-- Menu lists places
+	-- Has maps for all apts, hotels, duplex, etc...
+	-- displays helpful hint/tips.
+	-- numbering info for apt complex's
+	-- Can Serve info based on physical location...
+13). Recommender 
+	-- Could be built on MovieReview rails app
+14). Fully-Secure Internet ready Forum
+	-- Blocks cross-site scripting
+	-- Stops etc..
+	--etc.

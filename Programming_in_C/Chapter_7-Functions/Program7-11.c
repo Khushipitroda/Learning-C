@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 
+
+
 void multiply(float array[], int n)
 {
 
@@ -11,6 +13,7 @@ void multiply(float array[], int n)
 	{
 		array[i] *= 2;		// Mulitplies array[i] by two
 	}
+
 
 
 }
