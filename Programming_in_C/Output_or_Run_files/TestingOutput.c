@@ -31,8 +31,10 @@ int main (void)
 
 	// Prototype declarations
 	void welcomePlayer(void);
-	void playerInput(void);
-	void displayBoard(void);
+	void getResponse(void);
+	void ifResponse(void);
+	void ifWon(void);
+	void ifLost(void);
 	// Prototype declarations
 
 
@@ -41,25 +43,15 @@ int main (void)
 
 	welcomePlayer();
 
-	if (gAns == 1)
-	{
-		printf("\nSweet! You get the first move!\n");
-		displayBoard();
-		playerInput();
-		do {
-			printf("\n\nAlright! it's your move again!\n");
-			playerInput();
+	getResponse();
 
-		} while (gGameFinished != 1);
+	ifResponse();
 
-	}
+	//Start 1 or 2 player game
 
-	if (gAns == 2)
-	{
-		printf("\n\n\n==== Two Player Game! ====\n");
+	ifWon();
 
-	}
-
+	ifLost();
 
 
 
@@ -87,11 +79,64 @@ void welcomePlayer(void)
 	printf("2). Type 2 if you want to play a two-player game!\n");
 	printf("3). Type 3 to exit game.\n");
 	printf("\n--------------------------------------------------\n\n");
-	scanf("%i", &gAns);
-
 }
 
 
+void getResponse(void)
+{
+	scanf("%i", &gAns);
+}
+
+
+
+
+void ifResponse(void)
+{
+
+	void start1PlayerGame(void);
+	void start2PlayerGame(void);
+
+	if (gAns == 1)
+	{
+		start1PlayerGame();
+	}
+
+	if (gAns == 2)
+	{
+		start2PlayerGame();
+	}
+
+}
+
+void start1PlayerGame(void)
+{
+
+	void playerInput(void);
+	void displayBoard(void);
+
+		printf("\nSweet! You get the first move!\n");
+		displayBoard();
+		playerInput();
+		do {
+			printf("\n\nAlright! it's your move again!\n");
+			playerInput();
+		} while (gGameFinished != 1);
+}
+
+void start2PlayerGame(void)
+{
+	void player1input(void);
+	void player2input(void);
+
+	void displayBoard(void);
+
+		printf("\n\n\n==== Two Player Game! ====\n");
+
+		displayBoard();
+
+		player1input();
+
+}
 
 void displayBoard(void)
 {
@@ -132,6 +177,62 @@ void playerInput(void)
 		checkForWinner();
 
 }
+
+void player1input(void)
+{
+	void player2input(void);
+	void displayBoard(void);
+	void player1Decision(void);
+	void player2Decision(void);
+	void pickRow(void);
+	void pickColumn(void);
+	void checkForWinner(void);
+
+		printf("Player 1: it's your move!\n");
+
+		pickRow();
+
+		pickColumn();
+
+		player1Decision();
+
+		printf("You made your move!\n\n");
+
+		displayBoard();
+
+		checkForWinner();
+
+		player2input();
+
+}
+void player2input(void)
+{
+
+	void player1input(void);
+	void displayBoard(void);
+	void player1Decision(void);
+	void player2Decision(void);
+	void pickRow(void);
+	void pickColumn(void);
+	void checkForWinner(void);
+
+		printf("Player 2: it's your move!\n");
+
+		pickRow();
+
+		pickColumn();
+
+		player2Decision();
+
+		printf("You made your move!\n\n");
+
+		displayBoard();
+
+		checkForWinner();
+
+		player1input();
+
+}
 void pickRow(void)
 {
 	printf("Enter the row you want to play  : ");
@@ -150,6 +251,15 @@ void player1Decision(void)
 void player2Decision(void)
 {
 	gBoard[nRow][nCol] = gPlayer2;		// sets to 1.
+}
+
+void ifWon(void)
+{
+	printf("You won!!\n");
+}
+void ifLost(void)
+{
+	printf("Sorry! you lost.\n");
 }
 void checkForWinner(void)
 {
@@ -258,8 +368,6 @@ void checkDiagonals(void)
 	}
     checkCtr(ctr);
 }
-
-
 
 
 
