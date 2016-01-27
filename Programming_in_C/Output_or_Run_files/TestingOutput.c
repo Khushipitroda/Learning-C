@@ -43,21 +43,23 @@ int main (void)
 
 	if (gAns == 1)
 	{
-		printf("\n\nSweet! You get the first move!\n");
+		printf("\nSweet! You get the first move!\n");
 		displayBoard();
 		playerInput();
+		do {
+			printf("\n\nAlright! it's your move again!\n");
+			playerInput();
+
+		} while (gGameFinished != 1);
+
 	}
+
 	if (gAns == 2)
 	{
 		printf("\n\n\n==== Two Player Game! ====\n");
 
 	}
 
-	do {
-	printf("\n\nAlright! it's your move again!\n");
-	playerInput();
-
-	} while (gGameFinished != 1);
 
 
 
@@ -84,7 +86,7 @@ void welcomePlayer(void)
 	printf("1). Please type 1 to begin SOLO game!\n");
 	printf("2). Type 2 if you want to play a two-player game!\n");
 	printf("3). Type 3 to exit game.\n");
-	printf("\n--------------------------------------------------\n\n\n");
+	printf("\n--------------------------------------------------\n\n");
 	scanf("%i", &gAns);
 
 }
