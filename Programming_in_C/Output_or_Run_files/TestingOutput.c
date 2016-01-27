@@ -47,6 +47,11 @@ int main (void)
 		displayBoard();
 		playerInput();
 	}
+	if (gAns == 2)
+	{
+		printf("\n\n\n==== Two Player Game! ====\n");
+
+	}
 
 	do {
 	printf("\n\nAlright! it's your move again!\n");
@@ -79,7 +84,7 @@ void welcomePlayer(void)
 	printf("1). Please type 1 to begin SOLO game!\n");
 	printf("2). Type 2 if you want to play a two-player game!\n");
 	printf("3). Type 3 to exit game.\n");
-	printf("\n--------------------------------------------------\n\n");
+	printf("\n--------------------------------------------------\n\n\n");
 	scanf("%i", &gAns);
 
 }
@@ -88,10 +93,11 @@ void welcomePlayer(void)
 
 void displayBoard(void)
 {
-	printf("\n     ------- Columns -------\n");
+	printf("\n             ------- Columns -------\n\n");
     int i, j;
 	for (i = 0; i < 3; i++)
     {
+    	printf(" Row-%i: ", i);
 		for (j = 0; j < 3; j++)
 			printf("%8i", gBoard[i][j]);
 
@@ -105,7 +111,7 @@ void playerInput(void)
 {
 
 	void displayBoard(void);
-	void playerDecision(void);
+	void player1Decision(void);
 	void pickRow(void);
 	void pickColumn(void);
 	void checkForWinner(void);
@@ -115,7 +121,7 @@ void playerInput(void)
 
 		pickColumn();
 
-		playerDecision();
+		player1Decision();
 
 		printf("You made your move!\n\n");
 
@@ -135,9 +141,13 @@ void pickColumn(void)
 	printf("Now enter the Column you want to play  : ");
 	scanf("%i", &nCol);
 }
-void playerDecision(void)
+void player1Decision(void)
 {
 	gBoard[nRow][nCol] = gPlayer1;		// sets to 1.
+}
+void player2Decision(void)
+{
+	gBoard[nRow][nCol] = gPlayer2;		// sets to 1.
 }
 void checkForWinner(void)
 {

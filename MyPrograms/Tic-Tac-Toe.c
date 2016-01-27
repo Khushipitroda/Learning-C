@@ -79,7 +79,7 @@ void welcomePlayer(void)
 	printf("1). Please type 1 to begin SOLO game!\n");
 	printf("2). Type 2 if you want to play a two-player game!\n");
 	printf("3). Type 3 to exit game.\n");
-	printf("\n--------------------------------------------------\n\n");
+	printf("\n--------------------------------------------------\n\n\n");
 	scanf("%i", &gAns);
 
 }
@@ -88,10 +88,11 @@ void welcomePlayer(void)
 
 void displayBoard(void)
 {
-	printf("\n     ------- Columns -------\n");
+	printf("\n             ------- Columns -------\n\n");
     int i, j;
 	for (i = 0; i < 3; i++)
     {
+    	printf(" Row-%i: ", i);
 		for (j = 0; j < 3; j++)
 			printf("%8i", gBoard[i][j]);
 
