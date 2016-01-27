@@ -10,7 +10,7 @@
 
 		};
 
-	int gPlayer1 = 1, gPlayer2 = 2, gNone = 0;
+	int gPlayer1 = 1, gPlayer2 = 2, gPlayer3 = 2, gNone = 0;	// Player 3 is used for ai.
 
 	int nRow, nCol;
 
@@ -30,10 +30,15 @@ int main (void)
 
 
 	// Prototype declarations
-	void welcomePlayer(void);
-	void getResponse(void);
-	void ifResponse(void);
+
+	void welcomePlayer(void);	// Displays startup message.
+
+	void getResponse(void);		// Gets an int value from user
+
+	void ifResponse(void);		// Decides what to do based on user's response
+								// Starts another string of functions, named: start1playergame, or start2playergame.	
 	void ifWon(void);
+
 	void ifLost(void);
 	// Prototype declarations
 
@@ -49,9 +54,9 @@ int main (void)
 
 	//Start 1 or 2 player game
 
-	ifWon();
+	//ifWon();
 
-	ifLost();
+	//ifLost();
 
 
 
@@ -116,6 +121,7 @@ void start1PlayerGame(void)
 
 		printf("\nSweet! You get the first move!\n");
 		displayBoard();
+		//game1Loop();  function could specifically contain loop for game state. game2loop could hld 2 player game loop.
 		playerInput();
 		do {
 			printf("\n\nAlright! it's your move again!\n");
@@ -125,12 +131,16 @@ void start1PlayerGame(void)
 
 void start2PlayerGame(void)
 {
-	void playerInput(void);
+	void player1input(void);
+	void player2input(void);
+
 	void displayBoard(void);
 
 		printf("\n\n\n==== Two Player Game! ====\n");
 
+		displayBoard();
 
+		player1input();
 
 }
 
@@ -173,9 +183,10 @@ void playerInput(void)
 		checkForWinner();
 
 }
-void playerInput2(void)
-{
 
+void player1input(void)
+{
+	void player2input(void);
 	void displayBoard(void);
 	void player1Decision(void);
 	void player2Decision(void);
@@ -183,6 +194,7 @@ void playerInput2(void)
 	void pickColumn(void);
 	void checkForWinner(void);
 
+		printf("Player 1: it's your move!\n");
 
 		pickRow();
 
@@ -195,6 +207,36 @@ void playerInput2(void)
 		displayBoard();
 
 		checkForWinner();
+
+		player2input();
+
+}
+void player2input(void)
+{
+
+	void player1input(void);
+	void displayBoard(void);
+	void player1Decision(void);
+	void player2Decision(void);
+	void pickRow(void);
+	void pickColumn(void);
+	void checkForWinner(void);
+
+		printf("Player 2: it's your move!\n");
+
+		pickRow();
+
+		pickColumn();
+
+		player2Decision();
+
+		printf("You made your move!\n\n");
+
+		displayBoard();
+
+		checkForWinner();
+
+		player1input();
 
 }
 void pickRow(void)
@@ -216,6 +258,18 @@ void player2Decision(void)
 {
 	gBoard[nRow][nCol] = gPlayer2;		// sets to 1.
 }
+
+
+/*
+void aiDecision(void)
+{
+	//	 handles the computer playing against user. 
+
+
+	gBoard[nRow][nCol] = gPlayer3;
+}
+*/
+
 
 void ifWon(void)
 {
