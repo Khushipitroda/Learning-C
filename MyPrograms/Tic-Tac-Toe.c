@@ -74,8 +74,12 @@ int main (void)
 
 void welcomePlayer(void)
 {
-	printf("Welcome to Tic-Tac-Toe!\n");
-	printf("Please type 1 to begin game!  ");
+	printf("\n--------------------------------------------------\n");
+	printf("Welcome to Tic-Tac-Toe!\n\n");
+	printf("1). Please type 1 to begin SOLO game!\n");
+	printf("2). Type 2 if you want to play a two-player game!\n");
+	printf("3). Type 3 to exit game.\n");
+	printf("\n--------------------------------------------------\n\n");
 	scanf("%i", &gAns);
 
 }
@@ -84,15 +88,16 @@ void welcomePlayer(void)
 
 void displayBoard(void)
 {
+	printf("\n     ------- Columns -------\n");
     int i, j;
 	for (i = 0; i < 3; i++)
     {
 		for (j = 0; j < 3; j++)
-			printf("%5i", gBoard[i][j]);
+			printf("%8i", gBoard[i][j]);
 
     printf("\n");
     }
-
+    printf("\n\n");
 }
 
 
