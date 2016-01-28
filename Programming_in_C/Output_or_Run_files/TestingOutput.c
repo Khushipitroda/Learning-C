@@ -1,36 +1,46 @@
-// Program to illustrate the differences between automatic and static variables in functions
+ // Program generates a factorial by number with a recursive function
 
 #include <stdio.h>
 
 
-void auto_static(void)
+int main(void)
 {
 
-	int autoVar = 1;
-	static int staticVar = 1;
+	unsigned int j;
+	unsigned long int factorial(unsigned int);		// Prototype declaration
 
-	printf("automatic = %i, static = %i.\n", autoVar, staticVar);
 
-	++autoVar;			// Should be reset to 0 every time function is called.
-	++staticVar;		// Should increase by 1, everey time function is called.
+	for (j = 0; j < 11; j ++)
+	{
+		printf("%2u! = %lu.\n", j, factorial(j) );	// Print j, and factorial of j.
+	}
+
+
 
 
 }
 
 
 
-int main (void)
+// Recursive function to calculate the factorial of a positive integer
+
+unsigned long int factorial(unsigned int n)
 {
 
-	int i;
-	void auto_static(void);		// Prototype Declaration
+	unsigned long int result;
 
-	for (i = 0; i < 5; i++)
+
+	if (n == 0)
 	{
-		auto_static();			// Calls function 5 times.. fucntion inc and prints.
+		result = 1;
+	}
+	else
+	{
+		result = n * factorial (n - 1);		// This function calls on itself. It's recursive.. it keeps calling itself until n == 0..
+											// This is a very effiecient way to do things like get a factorial of n
 	}
 
 
-	return (0);
+	return (result);
 
 }
