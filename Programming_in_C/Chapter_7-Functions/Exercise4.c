@@ -29,7 +29,7 @@ float squareRoot(float x, float epsilon)
 		guess = (x / guess + guess ) / 2.0;						// This is actual piece of algorythm..
 
 		printf("Current Guess: %f.\n", guess);
-
+		
 	}
 
 	return guess;
@@ -39,8 +39,8 @@ float squareRoot(float x, float epsilon)
 int main (void)
 {
 	const float epsilon = .00001;	// For ending loop when epsilon is hit will be passed to square root function
-	// When you change the value of epsilon, at will effect the accuracy of the square root. B/C epsilon is used to
-	// know when to end that while loop.
+	// When you change the value of epsilon, at will effect the accuracy of the square root. B/C epsilon is used to 
+	// know when to end that while loop. 
 
 	printf("squareRoot (2.0) = %f.\n", squareRoot(2.0, epsilon));	// Implicitly calls squareRoot.
 	printf("squareRoot (144.0) = %f.\n", squareRoot(144.0, epsilon));
