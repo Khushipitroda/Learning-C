@@ -6,18 +6,17 @@ int main (void)
 
 	// Prototype Declarations
 	int mainMenu(void);	// returns int, sent nothing
-	void whereToGo(int);
+	int whereToGo(int response);
 
 	// main vars
 	int response;
 
 
-
 	response = mainMenu();
-	decision = whereToGo(response);	// This function sends user to desired sub-menu, passes user's response
+	whereToGo(response);	// This function sends user to desired sub-menu, passes user's response
 
 
-
+	return (0);
 }
 
 
@@ -42,18 +41,18 @@ int mainMenu()
 
 }
 
-void whereToGo(response)
+int whereToGo(int response)
 {
 
 	// Type declarations
-	void newMenu(void);
+	void orderMenu(void);
 	void phoneMenu(void);
 	void orderDir(void);
-	void timeClock(void);	
+	void timeClock(void);
 	void pinMenu(void);
 	void managerMenu(void);
 
-
+	// linkr wil fail b/c haven't defined fucntions yet....
 	if (response == 1)
 	{
 		orderMenu();
@@ -68,7 +67,7 @@ void whereToGo(response)
 	}
 	if (response == 4)
 	{
-		timeClock();		
+		timeClock();
 	}
 	if (response == 5)
 	{
@@ -78,11 +77,18 @@ void whereToGo(response)
 	{
 		managerMenu();
 	}
+	else
+		printf("Wrong Response.\n");
 
+    return(2);
 }
 
-int orderMenu(void)
+void orderMenu(void)
 {
+
+	int orderMenuDecision(int subResponse);
+
+
 	int subResponse;
 	char name;
 
@@ -90,13 +96,13 @@ int orderMenu(void)
 	scanf(" %i", &subResponse);
 
 	printf("What is the customer's name? :   ");
-	scanf(" %c", name);
+	scanf(" %c", &name);
 
 	orderMenuDecision(subResponse); // could pass name to make sure employee entered correct name. Prob have to use pointers
 
 }
 
-void orderMenuDecision(subResponse)
+int orderMenuDecision(subResponse)
 {
 
 	if (subResponse == 1)
@@ -107,8 +113,8 @@ void orderMenuDecision(subResponse)
 	{
 
 	}
-	else 
-		printf("Wrong response.\n")
-
+	else
+		printf("Wrong response.\n");
+    return(1);
 }
 
