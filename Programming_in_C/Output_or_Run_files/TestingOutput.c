@@ -1,37 +1,75 @@
-// Program uses a function that raises an integer to a positive integer power..
-// IE : x is passed. Function returns x^2.
+// Program solves quadratic equations
+// things we need to think about:
+									/*	1). imaginary numbers
+										2). is passed three numbers
+										3). 1x^2 + 2x + 3 is recipe.
+										4) to find the roots we need to use
+											x = -b |+-| square root b^2 - 4(a)(c) / 2 (a)
+
+
+										*/
 
 #include <stdio.h>
 
-int main (void)
+
+
+void quadraticFunc(float a,float b,float c)
 {
-	//type declerations
-	int x_to_the_n(int x);
 
-    int result1, result2, result3, result4;
+	//variables
+	float absoluteB;			// This is inverted b
+	float root;				// This is 4(a)(c)
+	float division;			// This is 2(a)
+	float result1;			// first root
+	float result2;			// second root
+	float temp;
 
-	result1 = x_to_the_n(5);
-	result2 = x_to_the_n(2);
-	result3 = x_to_the_n(10);
-	result4 = x_to_the_n(-25);
+	// could break into seperate functions
+		absoluteB = -b;	// Gets abs value.
 
-    printf("5^2 = %i.\n", result1);
-    printf("2^2 =  %i.\n", result2);
-    printf("10^2 =  %i.\n", result3);
-    printf("25^2 = %i.\n", result4);
 
+
+	// the 4 (a) (c)
+
+	temp = b * b;
+
+	root = (4 * (a * c));
+
+	temp -= root;
+
+	division = a * 2;
+
+
+	result1 = ( absoluteB + temp ) / division;
+
+	result2 = ( absoluteB - temp ) / division;
+
+
+	printf("Calculated: %1fx^2 +or- %1fx +or- %1fx = 0.\n", a,b,c);
+	printf("\nfirst root = %f.\n", result1);
+	printf("Second root = %f.\n", result2);
+	printf("\n\n");
 
 }
 
-int x_to_the_n(int x)
+
+
+int main (void)
 {
-	if (x < 0)
-	{
-		x = -x;	// sets negative to positive
-	}
 
-	x *= x;	// Sets power of x to x.
+	// prototype Declaration
+	void quadraticFunc(float a, float b, float c);
+    float a,b,c;
+	//variables
+	float result;
+
+	quadraticFunc(3, 5, 10);	// equates to 3x^2 + 5x + 10
+
+	printf("Enter the next quadratic function:  ");
+	scanf("%f %f %f", &a, &b, &c);
+
+	quadraticFunc(a,b,c);
 
 
-	return x;
+	return (0);
 }
