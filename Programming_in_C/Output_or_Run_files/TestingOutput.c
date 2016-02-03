@@ -1,112 +1,95 @@
-// Program solves quadratic equations
-// things we need to think about:
-									/*	1). imaginary numbers
-										2). is passed three numbers
-										3). 1x^2 + 2x + 3 is recipe.
-										4) to find the roots we need to use
-											x = -b |+-| square root b^2 - 4(a)(c) / 2 (a)
+// This program shows how much typing and repeating can be saved by using functions...
+// Instead of typing out code to loop through and display the matrix every single time we want to
+// We can just put the piece of code into a function that expects an array.
 
 
-										*/
+		/*	Book specified scalarMuliply as function name, however that caused the linker to fail, bc Multiply is likely
+			Defined somewhere in doumentation. Changed to scalarArray.	*/
 
 #include <stdio.h>
 
 int main (void)
 {
 
-	// prototype Declaration
-	void quadraticFunc(float a, float b, float c);
-    float a,b,c;
-	//variables
-	float result;
-	printf("What??\n");
-	quadraticFunc(4, -17, -15);	// equates to 3x^2 + 5x + 10
+	// Prototype Declarations
+	void scalarArray(int nRows, int nCols, int matrix[nRows][nCols], int scalar);			// Takes four arguments.. array rows, array cols, then uses
+	void displayMatrix(int nRows, int nCols, int matrix[nRows][nCols]);						// the previously stated vars to define matrix with the correct
+																							// lengths.
 
-	printf("Enter the next quadratic function:  ");
-	scanf("%f %f %f", &a, &b, &c);
+	// Matrix Array Declaration.
+	int sampleMatrix[3][5] =
+	{
+		{  7, 16, 55, 13, 12 },	// row 0
+		{ 12, 10, 52,  0,  7 },	// row 1
+		{ -2,  1,  2,  4,  9 }	// row 2
+	};
 
-	quadraticFunc(a,b,c);
+
+
+
+	printf("Original matrix:\n");
+	displayMatrix(3, 5, sampleMatrix);				// So now we just have to add the extra two arguments, which allows us to change array lengths
+
+
+	scalarArray(3, 5, sampleMatrix, 2);
+
+
+	printf("\n\nMultiplied by 2 :\n");
+	displayMatrix(3, 5, sampleMatrix);
+
+
+	scalarArray(3, 5, sampleMatrix, -1);
+
+	printf("\nThen multiplied by -1 :\n");
+	displayMatrix(3, 5, sampleMatrix);
+
 
 
 	return (0);
-}
-
-
-void quadraticFunc(float a,float b,float c)
-{
-
-	// Prototype defs
-	float squareRoot(float x);
-
-
-
-
-	//variables
-	float absoluteB;			// This is inverted b
-	float discriminant;				// This is 4(a)(c)
-	float division;			// This is 2(a)
-	float result1;			// first root
-	float result2;			// second root
-	float temp;
-
-	// could break into seperate functions
-		absoluteB = -b;	// Gets abs value.
-
-
-
-	// the 4 (a) (c)
-
-
-	discriminant = (b * b) - (4 * (a * c));
-
-	discriminant = squareRoot(discriminant);
-
-	division = a * 2;
-
-	// Fuck. Before we can do this step, we need to find the square root of the discriminant. we could call sep funct
-	result1 = ( absoluteB + discriminant ) / division;
-
-	result2 = ( absoluteB - discriminant ) / division;
-
-
-	printf("Calculated: %1fx^2 +or- %1fx +or- %1fx = 0.\n", a,b,c);
-	printf("\nfirst root = %f.\n", result1);
-	printf("Second root = %f.\n", result2);
-	printf("\n\n");
-
-}
-
-float absoluteValue (float x)
-{
-
-	if (x < 0)
-		x = -x;
-
-	return (x);
 
 }
 
 
 
-// Function to compute square root.
 
-float squareRoot(float x)
+
+
+
+// ==================== Function to multiply a 3 x 5 array by a scalar ====================
+
+void scalarArray(int nRows, int nCols,
+					 int matrix[nRows][nCols], int scalar)
 {
-	float absoluteValue(float x);
+	int row, column;
 
-	const float epsilon = .00001;
-	float 		guess 	= 1.0;
-																// if x = 25...
-	while ( absoluteValue (guess * guess - x) >= epsilon )		// 1.0 * 1.0 = 2.0 - 25 = -23. then absolut val is run.. 23 is > than .00001. Continue loop!
+	for (row = 0; row < nRows; row++ )				// Runs through all rows // Sets row length to correct arg.
 	{
-																// if guess has reached 5...
-																// 5 * 5 = 25 - 25 = 0... 0 >= 0.00001. 0 is less than epsilon.. stop loop. return guess..
+		for (column = 0; column < nCols; column++)	// Runs through all columns  // Sets column to appropriate length with arg.
+			matrix[row][column] *= scalar;		// This does the multiplying
 
-		guess = (x / guess + guess ) / 2.0;						// This is actual piece of algorythm..
 	}
-
-	return guess;
-
 }
+
+
+
+
+// ==================== Function to printf a 3 x 5 array ==================================
+
+void displayMatrix(int nRows, int nCols, int matrix[nRows][nCols])	// only argument is array[3][5] // Added col and row for dynamic array-length
+{
+	int row, column;
+
+	for (row = 0; row < nRows; row++)
+	{
+		for (column = 0; column < nCols; column++)
+			printf("%5i", matrix[row][column]);
+
+		printf("\n");	// printfs newline after column is done printing.
+	}
+	printf("\n");		// newline at end of function.
+}
+
+
+
 
 
