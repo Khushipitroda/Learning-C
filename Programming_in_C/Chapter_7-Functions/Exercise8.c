@@ -16,9 +16,15 @@
 void quadraticFunc(float a,float b,float c)
 {
 
+	// Prototype defs
+	float squareRoot(float x);
+
+
+
+
 	//variables
 	float absoluteB;			// This is inverted b
-	float root;				// This is 4(a)(c)
+	float discriminant;				// This is 4(a)(c)
 	float division;			// This is 2(a)
 	float result1;			// first root
 	float result2;			// second root
@@ -33,6 +39,8 @@ void quadraticFunc(float a,float b,float c)
 
 	
 	discriminant = (b * b) - (4 * (a * c));
+
+	discriminant = squareRoot(discriminant);
 
 	division = a * 2;
 
@@ -49,6 +57,37 @@ void quadraticFunc(float a,float b,float c)
 
 }
 
+float absoluteValue (float x)
+{
+
+	if (x < 0)
+		x = -x;
+
+	return (x);
+
+}
+
+
+
+// Function to compute square root.
+
+float squareRoot(float x)
+{
+
+	const float epsilon = .00001;
+	float 		guess 	= 1.0;
+																// if x = 25...
+	while ( absoluteValue (guess * guess - x) >= epsilon )		// 1.0 * 1.0 = 2.0 - 25 = -23. then absolut val is run.. 23 is > than .00001. Continue loop!
+	{
+																// if guess has reached 5...
+																// 5 * 5 = 25 - 25 = 0... 0 >= 0.00001. 0 is less than epsilon.. stop loop. return guess..
+
+		guess = (x / guess + guess ) / 2.0;						// This is actual piece of algorythm..
+	}
+
+	return guess;
+
+}
 
 
 int main (void)
