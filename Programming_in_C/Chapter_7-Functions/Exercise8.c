@@ -10,7 +10,26 @@
 										*/
 
 #include <stdio.h>
+											
+int main (void)
+{
 
+	// prototype Declaration
+	void quadraticFunc(float a, float b, float c);
+    float a,b,c;
+	//variables
+	float result;
+	printf("What??\n");
+	quadraticFunc(4, -17, -15);	// equates to 3x^2 + 5x + 10
+
+	printf("Enter the next quadratic function:  ");
+	scanf("%f %f %f", &a, &b, &c);
+
+	quadraticFunc(a,b,c);
+
+
+	return (0);
+}
 
 
 void quadraticFunc(float a,float b,float c)
@@ -73,6 +92,7 @@ float absoluteValue (float x)
 
 float squareRoot(float x)
 {
+	float absoluteValue(float x);
 
 	const float epsilon = .00001;
 	float 		guess 	= 1.0;
@@ -90,22 +110,3 @@ float squareRoot(float x)
 }
 
 
-int main (void)
-{
-
-	// prototype Declaration
-	void quadraticFunc(float a, float b, float c);
-    float a,b,c;
-	//variables
-	float result;
-
-	quadraticFunc(3, 5, 10);	// equates to 3x^2 + 5x + 10
-
-	printf("Enter the next quadratic function:  ");
-	scanf("%f %f %f", &a, &b, &c);
-
-	quadraticFunc(a,b,c);
-
-
-	return (0);
-}
