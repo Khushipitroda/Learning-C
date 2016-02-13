@@ -28,21 +28,25 @@ int main (void)
 	printf("Enter Today's Date (mm dd yyyy): ");
 	scanf("%i%i%i", &today.month, &today.day, &today.year);
 
-	if ( today.day != numberOfDays (today))
+	if ( today.day != numberOfDays (today))		// avg day... if does not == the end of the month...
 	{
-
-
+		tomorrow.day   = today.day +1;
+		tomorrow.month = today.month;
+		tomorrow.year  = today.year;
 	}
-	else if (today.month == 12)
+	else if (today.month == 12)					// end of a year
 	{
-
+		tomorrow.day   = 1;
+		tomorrow.month = 1;
+		tomorrow.year  = today.year + 1;
 	}
-	else
+	else										// end of a month
 	{
-
-
+		tomorrow.day   = 1;
+		tomorrow.month = today.month + 1;
+		tomorrow.year  = today.year;
 	}
-
+	printf("Tomorrow's date is %i/%i/%.2i.\n", tomorrow.month, tomorrow.day, tomorrow.year % 100);
 
 
 	return (0);
