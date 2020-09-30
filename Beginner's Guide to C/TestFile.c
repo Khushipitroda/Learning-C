@@ -55,7 +55,7 @@ int main()
 		// Removing, and deletion of files takes place here:
 
 
-		printf("Successfully removed all of the failing students.");
+		printf("Successfully removed all of the failed students.");
 
 		return 0;
 }
